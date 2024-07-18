@@ -8,13 +8,13 @@ public class LlamaScript : MonoBehaviour
 {
     [SerializeField] LlamaData llamaData;
     [SerializeField] GameObject phlegmPrefab;
-    public int level;
+    public int level=1;
     bool isdead;
     private void Start()
     {
         StartCoroutine(SpitFire());
         RespawnLama();
-        Kill();
+        //Kill();
     }
 
     public void Kill()
@@ -34,8 +34,9 @@ public class LlamaScript : MonoBehaviour
     {
         while (!isdead) 
         {
-            yield return new WaitForSeconds(level * 0.1f * llamaData.baseFireSpeed);
+            yield return new WaitForSeconds(level * 1f * llamaData.baseFireSpeed);
             Instantiate(phlegmPrefab, gameObject.transform.GetChild(0).transform.position, Quaternion.identity);
+            Debug.Log("Hawk tuak" + level * 1f * llamaData.baseFireSpeed);
         }
         
     }

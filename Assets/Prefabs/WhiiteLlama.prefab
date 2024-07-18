@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 4.018592, y: 8.129761, z: -4.4292035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7725432104603197158}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6249359219707415269
@@ -118,4 +119,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2959dbb56384c30418c78e3e87378776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfLlama: {fileID: 11400000, guid: f4d1f9b579837b043a319ea482f58865, type: 2}
+  llamaData: {fileID: 11400000, guid: f4d1f9b579837b043a319ea482f58865, type: 2}
+  phlegmPrefab: {fileID: 3370004618747809672, guid: 5747332a4140f9445b9e6652ab59829e,
+    type: 3}
+  level: 0
+--- !u!1 &8246284273035703391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7725432104603197158}
+  m_Layer: 0
+  m_Name: Mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7725432104603197158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246284273035703391}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.278, z: 0.757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7564634663472466654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

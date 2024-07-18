@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da57f1a479e20d74f9b7c176e3929277, type: 3}
   m_Name: WhiteLlama
   m_EditorClassIdentifier: 
-  fireSpeed: 2
+  baseFireSpeed: 0
   llamaPrefab: {fileID: 0}
-  damage: 5
+  baseDamage: 0
+  type: 1

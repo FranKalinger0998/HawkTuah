@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7038263115416259601
+--- !u!1 &3370004618747809672
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6087672908242236371}
-  - component: {fileID: 1359527121340873400}
-  - component: {fileID: 3525067756930871575}
-  - component: {fileID: 2820749470743098132}
-  - component: {fileID: 4607964087687953202}
+  - component: {fileID: 5231360952461618438}
+  - component: {fileID: 3771516049441901328}
+  - component: {fileID: 6021013617378071121}
+  - component: {fileID: 8622494474835556132}
+  - component: {fileID: 4595067372049683370}
   m_Layer: 0
-  m_Name: GreeenLlama
+  m_Name: Phlegm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6087672908242236371
+--- !u!4 &5231360952461618438
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7038263115416259601}
+  m_GameObject: {fileID: 3370004618747809672}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.27, y: 1.1780925, z: -0.00080973963}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 4.2581196, y: 5.348678, z: 1.2666168}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1359527121340873400
+--- !u!33 &3771516049441901328
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7038263115416259601}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3525067756930871575
+  m_GameObject: {fileID: 3370004618747809672}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6021013617378071121
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7038263115416259601}
+  m_GameObject: {fileID: 3370004618747809672}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2820749470743098132
-BoxCollider:
+--- !u!135 &8622494474835556132
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7038263115416259601}
+  m_GameObject: {fileID: 3370004618747809672}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -100,25 +100,21 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4607964087687953202
+--- !u!114 &4595067372049683370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7038263115416259601}
+  m_GameObject: {fileID: 3370004618747809672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2959dbb56384c30418c78e3e87378776, type: 3}
+  m_Script: {fileID: 11500000, guid: 4861584f8bcb2ee45a6d801fe1b375f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  llamaData: {fileID: 11400000, guid: dd1cfc579bdbe024585e5e8b759647a8, type: 2}
-  phlegmPrefab: {fileID: 3370004618747809672, guid: 5747332a4140f9445b9e6652ab59829e,
-    type: 3}
-  level: 0

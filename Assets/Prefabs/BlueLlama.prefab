@@ -118,4 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2959dbb56384c30418c78e3e87378776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfLlama: {fileID: 11400000, guid: 39a022215184d4f47b8094bd6adf9e3b, type: 2}
+  llamaData: {fileID: 11400000, guid: 39a022215184d4f47b8094bd6adf9e3b, type: 2}
+  phlegmPrefab: {fileID: 3370004618747809672, guid: 5747332a4140f9445b9e6652ab59829e,
+    type: 3}
+  level: 0

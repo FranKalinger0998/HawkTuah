@@ -4,8 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="ScriptableFriendly")]
 public class LlamaData : ScriptableObject
 {
-    public int fireSpeed;
+    public int baseFireSpeed;
     public GameObject llamaPrefab;
-    public int damage;
+    public int baseDamage;
+    public LamaType type;
     
 }

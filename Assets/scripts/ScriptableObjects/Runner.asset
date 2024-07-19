@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72057eee293cb814c95839b9699549ea, type: 3}
+  m_Name: Runner
+  m_EditorClassIdentifier: 
+  speedModifier: 3
+  health: 10
+  enemyPrefab: {fileID: 6114749488906109509, guid: 4b32437fb68f14945a3da9594db015df,
+    type: 3}
+  enemyType: 1

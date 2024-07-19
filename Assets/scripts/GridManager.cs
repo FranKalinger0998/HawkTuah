@@ -7,8 +7,8 @@ public class GridManager : MonoBehaviour
     
         public GameObject squarePrefab;
         public int rows = 5;
-        public int columns = 5;
-        public float spacing = 1.1f; // Adjust the spacing between squares
+        public int columns = 6;
+        public float spacing = 0.1f; // Adjust the spacing between squares
 
         void Start()
         {
@@ -21,8 +21,8 @@ public class GridManager : MonoBehaviour
             {
                 for (int j = 0; j < rows; j++)
                 {
-                    Vector3 position = new Vector3(i * spacing, 0, j * spacing);
-                    Instantiate(squarePrefab, position, Quaternion.identity);
+                    Vector3 position = new Vector3(i*2-spacing, 0, j*2-spacing);
+                    Instantiate(squarePrefab, position - new Vector3(6.9f,0,2.9f), Quaternion.identity);
                 }
             }
         }

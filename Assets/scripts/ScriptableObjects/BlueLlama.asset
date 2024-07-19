@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da57f1a479e20d74f9b7c176e3929277, type: 3}
   m_Name: BlueLlama
   m_EditorClassIdentifier: 
-  baseFireSpeed: 0
-  llamaPrefab: {fileID: 0}
-  baseDamage: 0
+  baseFireSpeed: 1
+  llamaPrefab: {fileID: 5302530864017225994, guid: 14ff5d277ba62ce49ab7b26737eed7e2,
+    type: 3}
+  baseDamage: 5
   type: 2

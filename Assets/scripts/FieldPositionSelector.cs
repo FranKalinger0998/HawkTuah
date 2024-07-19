@@ -10,6 +10,8 @@ public class FieldPositionSelector : MonoBehaviour
     [SerializeField] LayerMask layermask;
     [SerializeField] GameObject prefab;
     bool isStopped;
+    public Material material1;
+    public Material material2;
     GameObject selectedField;
     public Vector3 GetSelectedFieldPosition()
     {
@@ -24,17 +26,28 @@ public class FieldPositionSelector : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100, layermask))
             {
                 lastPosition = hit.point;
-                if (hit.collider.gameObject !=null)
+                if (hit.collider.gameObject.CompareTag("Field"))
                 {
-                    selectedField = hit.collider.gameObject;         
+                    if(selectedField !=hit.collider.gameObject && selectedField!=null)
+                    {
+                        selectedField.GetComponent<MeshRenderer>().material = material1;
+                    }
+                    selectedField = hit.collider.gameObject;    
+                    selectedField.GetComponent<MeshRenderer>().material = material2;
+                }
+                else
+                {         
+                    selectedField = null;
                 }
             }
         }
         else 
         {
-            if(selectedField != null && !isStopped)
+            
+            if (selectedField != null && !isStopped)
             {
-                Instantiate(prefab, selectedField.transform.position, Quaternion.identity);
+                selectedField.GetComponent<MeshRenderer>().material = material1;
+                Instantiate(prefab, selectedField.transform.position + new Vector3(0.4f,0.5f,-0.6f), prefab.transform.rotation);
                 isStopped = true;
             }
             

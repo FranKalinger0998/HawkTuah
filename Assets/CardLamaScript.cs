@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 public enum LamaType
 {
     Gold,
-    White,
+    Red,
     Blue,
     Green
 }
@@ -18,15 +21,25 @@ public class CardLamaData
 public class CardLamaScript : MonoBehaviour
 {
     public CardLamaData data;
+    public TMP_Text lvlText;
+
+
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        SetLevel(data.level);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    
+    public void SetLevel(int level)
+    {
+        //Debug.Log(level);
+        data.level = level;
+        lvlText.text = level.ToString();
     }
 }

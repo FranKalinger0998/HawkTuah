@@ -28,7 +28,7 @@ public class EnemyScript : MonoBehaviour
         {
             LlamaScript reference = other.gameObject.GetComponent<SpitScript>().spitSender.GetComponent<LlamaScript>();
             int damage = reference.damage;
-            if(reference.lamaType==LamaType.White)
+            if(reference.lamaType==LamaType.Red)
             {
                 currentHealth -= damage;
                 Destroy(other.gameObject);

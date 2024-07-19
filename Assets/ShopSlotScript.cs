@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class ShopSlotScript : MonoBehaviour
 {
-
+    bool isBought;
     public void ShopCardClicked()
     {
         Debug.Log("Clicked");
-        ShopController.Instance.BuyCard(transform.GetChild(0).gameObject);
+        if (!isBought)
+        {
+            if(ShopController.Instance.BuyCard(transform.GetChild(0).gameObject, transform.GetChild(0).GetComponent<CardLamaScript>().data.level))
+            {
+                isBought = true;
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ public class ShopController : MonoBehaviour
     [SerializeField] RectTransform shopSection;
     [SerializeField] RectTransform hand;
     [SerializeField] int baseCardCost = 10;
-    [SerializeField] int baseRefilCost = 30;
+    [SerializeField] int baseRefillCost = 30;
     [SerializeField] int baseShopUpgradeCost = 300;
     [SerializeField] GameObject[] shopPrefab;
     public int shopLevel = 1;
@@ -60,7 +60,7 @@ public class ShopController : MonoBehaviour
     }
     public void BuyRefillShop()
     {
-        if (GameManager.Instance.TrySpendMoney(baseCardCost * shopLevel))
+        if (GameManager.Instance.TrySpendMoney(baseRefillCost * shopLevel))
         {
             RefillShop();
         }

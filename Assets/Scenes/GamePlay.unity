@@ -2213,9 +2213,9 @@ MonoBehaviour:
   shop: {fileID: 1379149801}
   shopSection: {fileID: 1519696127}
   hand: {fileID: 110178064}
-  baseCardCost: 10
-  baseRefillCost: 30
-  baseShopUpgradeCost: 300
+  baseCardCost: 1
+  baseRefillCost: 1
+  baseShopUpgradeCost: 1
   shopPrefab:
   - {fileID: 1480415206382572738, guid: c89da8c0cff719b4a925b9dc3d2a291d, type: 3}
   - {fileID: 5420317374062596379, guid: f5ad54f81655e05469817326a68df0d8, type: 3}

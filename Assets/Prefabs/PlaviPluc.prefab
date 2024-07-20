@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5c95fcc6f510d0c4fa388cfa461302aa,
         type: 3}
       propertyPath: m_Name
-      value: "Pljuva\u010Dka"
+      value: PlaviPluc
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c95fcc6f510d0c4fa388cfa461302aa,
         type: 3}
@@ -155,5 +155,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.0568265
+  m_Radius: 0.04
   m_Center: {x: 0.020166092, y: 0.007824403, z: 0.0036729088}

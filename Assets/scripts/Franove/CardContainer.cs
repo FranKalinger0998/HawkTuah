@@ -34,16 +34,27 @@ public class CardContainer : MonoBehaviour {
 
     [SerializeField]
     private CardPlayConfig cardPlayConfig;
-    
+
     [Header("Events")]
     [SerializeField]
     private EventsConfig eventsConfig;
-    
+
     private List<CardWrapper> cards = new();
 
     private RectTransform rectTransform;
     private CardWrapper currentDraggedCard;
+    public static CardContainer Instance;
+    public GameObject lastDraggedObject { get {
+            GameObject temp = lastDraggedObject;
+            lastDraggedObject = null;
+            return temp; } set { lastDraggedObject= value; }
+    }
+    
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start() {
         rectTransform = GetComponent<RectTransform>();
         InitCards();
@@ -210,6 +221,8 @@ public class CardContainer : MonoBehaviour {
 
     public void OnCardDragStart(CardWrapper card) {
         currentDraggedCard = card;
+        lastDraggedObject=card.gameObject;
+        Debug.Log(lastDraggedObject.name);
     }
 
     public void OnCardDragEnd() {

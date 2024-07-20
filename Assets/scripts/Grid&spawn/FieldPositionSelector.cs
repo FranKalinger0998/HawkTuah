@@ -21,7 +21,7 @@ public class FieldPositionSelector : MonoBehaviour
             Vector3 worldPoint = sceneCamera.ScreenToWorldPoint(touchPosition);
             Ray ray = sceneCamera.ScreenPointToRay(touchPosition);
             RaycastHit hit;
-            GameObject temp;
+            
             isStopped = false;
             if (Physics.Raycast(ray, out hit, 100, layermask))
             {

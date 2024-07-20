@@ -118,6 +118,7 @@ public class CombineScript : MonoBehaviour
                 if (destroyCount == 3)
                 {
                     SpawnNewCard(cardPrefab, level + 1);
+                    //break;
                 }
             }
         }
@@ -127,6 +128,6 @@ public class CombineScript : MonoBehaviour
     {
         GameObject newCard = Instantiate(cardPrefab, transform);
         CardLamaScript newCardScript = newCard.GetComponent<CardLamaScript>();
-        newCardScript.data.level = newLevel;
+        newCardScript.SetLevel(newLevel);
     }
 }

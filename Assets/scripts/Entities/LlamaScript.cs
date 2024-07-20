@@ -15,10 +15,12 @@ public class LlamaScript : MonoBehaviour
     public int damage;
     private void Start()
     {
-        StartCoroutine(SpitFire());
-        damage=llamaData.baseDamage*level;
+        if (llamaData.baseFireSpeed != 0)
+        {
+            StartCoroutine(SpitFire());
+        }
+        damage =llamaData.baseDamage*level;
         lamaType=llamaData.type;
-        //Kill();
     }
 
     public void Kill()
@@ -41,9 +43,6 @@ public class LlamaScript : MonoBehaviour
             }
         }    
     }
-
-
-
     IEnumerator SpitFire()
     {
         while (!isdead) 
@@ -52,7 +51,8 @@ public class LlamaScript : MonoBehaviour
             //phlegmPrefab.GetComponent<SpitScript>().spitSender=gameObject;
             temp.GetComponent<SpitScript>().spitSender = gameObject;
             //Debug.Log(phlegmPrefab.GetComponent<SpitScript>().spitSender.name);
-            yield return new WaitForSeconds(4f * (1/llamaData.baseFireSpeed));
+            
+                yield return new WaitForSeconds(4f * (1 / llamaData.baseFireSpeed));          
         }
         
     }

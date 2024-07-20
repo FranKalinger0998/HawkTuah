@@ -65,6 +65,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5c95fcc6f510d0c4fa388cfa461302aa,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c95fcc6f510d0c4fa388cfa461302aa,
+        type: 3}
       propertyPath: m_TagString
       value: Spittle
       objectReference: {fileID: 0}

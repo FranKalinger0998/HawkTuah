@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Goldenllama : MonoBehaviour
 {
-    // Start is called before the first frame update
+    int baseAmountGenerated=5;
+    int amountGenerated;
+    int moneyGenerationInterval=5;
+    [SerializeField] LlamaScript llamaScript;
+    [SerializeField] GameObject coinPrefab;
     void Start()
     {
-       // GameManager.Instance.
+        amountGenerated=baseAmountGenerated*llamaScript.level;
+        StartCoroutine(GoldenLlamaGenerator());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator GoldenLlamaGenerator()
     {
-        
+        yield return new WaitForSeconds(moneyGenerationInterval);
+        GameManager.Instance.AddMoney(amountGenerated);
+        Instantiate(coinPrefab, transform.position + Vector3.up*2, coinPrefab.transform.rotation, transform);
+        coinPrefab.GetComponent<CoinScript>().SetIncomeText($"+{amountGenerated.ToString()}");
     }
+    
 }

@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
     }
+    public void AddMoney(int amount)
+    {
+        money += amount;
+    }
     public bool TrySpendMoney(int amount)
     {
 

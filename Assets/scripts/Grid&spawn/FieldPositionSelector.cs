@@ -32,13 +32,17 @@ public class FieldPositionSelector : MonoBehaviour
                 lastPosition = hit.point;
                 if (hit.collider.gameObject.CompareTag("Field"))
                 {
+
                     if (selectedField != hit.collider.gameObject && selectedField != null)
                     {
                         selectedField.GetComponent<MeshRenderer>().material = material1;
+                        selectedField.GetComponent<MeshRenderer>().enabled = false;
                     }
                     selectedField = hit.collider.gameObject;
-                    if (selectedField.transform.childCount == 0)
+                    selectedField.GetComponent<MeshRenderer>().enabled = true;
+                    if (selectedField.transform.childCount == 1)
                     {
+
                         selectedField.GetComponent<MeshRenderer>().material = material2;
                     }
                 }

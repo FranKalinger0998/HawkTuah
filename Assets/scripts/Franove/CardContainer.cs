@@ -44,11 +44,7 @@ public class CardContainer : MonoBehaviour {
     private RectTransform rectTransform;
     private CardWrapper currentDraggedCard;
     public static CardContainer Instance;
-    public GameObject lastDraggedObject { get {
-            GameObject temp = lastDraggedObject;
-            lastDraggedObject = null;
-            return temp; } set { lastDraggedObject= value; }
-    }
+    public GameObject lastDraggedObject;
     
 
     private void Awake()

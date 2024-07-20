@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   llamaData: {fileID: 11400000, guid: dd1cfc579bdbe024585e5e8b759647a8, type: 2}
-  phlegmPrefab: {fileID: 5236270076707377997, guid: a47c6c0d369db474ab2eec86ad499691,
+  phlegmPrefab: {fileID: 5236270076707377997, guid: ccad6b05d0eadb24e8d2cdd218f97210,
     type: 3}
   lamaType: 3
   level: 1

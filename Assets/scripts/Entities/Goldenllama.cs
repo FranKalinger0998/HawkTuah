@@ -18,10 +18,14 @@ public class Goldenllama : MonoBehaviour
 
     IEnumerator GoldenLlamaGenerator()
     {
-        yield return new WaitForSeconds(moneyGenerationInterval);
-        GameManager.Instance.AddMoney(amountGenerated);
-        Instantiate(coinPrefab, transform.position + Vector3.up*2, coinPrefab.transform.rotation, transform);
-        coinPrefab.GetComponent<CoinScript>().SetIncomeText($"+{amountGenerated.ToString()}");
+        while (true)
+        {
+            yield return new WaitForSeconds(moneyGenerationInterval);
+            GameManager.Instance.AddMoney(amountGenerated);
+            Instantiate(coinPrefab, transform.position + Vector3.up*2, coinPrefab.transform.rotation, transform);
+            coinPrefab.GetComponent<CoinScript>().SetIncomeText($"+{amountGenerated.ToString()}");
+        }
+        
     }
     
 }

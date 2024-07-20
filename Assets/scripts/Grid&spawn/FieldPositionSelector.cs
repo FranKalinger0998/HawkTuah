@@ -32,8 +32,11 @@ public class FieldPositionSelector : MonoBehaviour
                     {
                         selectedField.GetComponent<MeshRenderer>().material = material1;
                     }
-                    selectedField = hit.collider.gameObject;    
-                    selectedField.GetComponent<MeshRenderer>().material = material2;
+                    selectedField = hit.collider.gameObject;
+                    if (selectedField.transform.childCount == 0)
+                    {
+                        selectedField.GetComponent<MeshRenderer>().material = material2;
+                    }                  
                 }
                 else
                 {         
@@ -46,9 +49,13 @@ public class FieldPositionSelector : MonoBehaviour
             
             if (selectedField != null && !isStopped)
             {
-                selectedField.GetComponent<MeshRenderer>().material = material1;
-                Instantiate(prefab, selectedField.transform.position + new Vector3(0.4f,0.5f,-0.6f), prefab.transform.rotation);
-                isStopped = true;
+                if (selectedField.transform.childCount == 0)
+                {
+                    selectedField.GetComponent<MeshRenderer>().material = material1;
+                    Instantiate(prefab, selectedField.transform.position + new Vector3(0.4f, 0.5f, -0.6f), prefab.transform.rotation, selectedField.transform);
+                    isStopped = true;
+                }
+               
             }
             
         }

@@ -2374,6 +2374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6122915553841181587}
   - component: {fileID: 9063313606033166771}
+  - component: {fileID: 9063313606033166772}
   m_Layer: 5
   m_Name: card-container
   m_TagString: Untagged
@@ -2463,6 +2464,18 @@ MonoBehaviour:
     OnCardDestroy:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &9063313606033166772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8919549565109465630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc3d88f3fac2eb4386e4ff18d399896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

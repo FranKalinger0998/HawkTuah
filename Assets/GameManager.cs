@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,12 +11,27 @@ public class GameManager : MonoBehaviour
     int vaweCount;
     int money;
     bool isGameRunning;
+    int Lifes;
+    int MaxLifes=5;
+
 
     public TMP_Text MoneyText;
+    public Image HealthImage;
 
     private void Awake()
     {
         Instance = this;
+        Lifes=MaxLifes;
+    }
+    
+    public void RemoveLife()
+    {
+        Lifes--;
+        HealthImage.fillAmount = (float)Lifes/(float)MaxLifes ;
+        if ( Lifes <= 0 ) 
+        {
+            SceneManager.LoadScene("EndScrene");
+        }
     }
     public void AddMoney(int amount)
     {
@@ -28,7 +45,6 @@ public class GameManager : MonoBehaviour
             money -= amount;
             UpdateUI();
             return true;
-            
         }
         else 
         {

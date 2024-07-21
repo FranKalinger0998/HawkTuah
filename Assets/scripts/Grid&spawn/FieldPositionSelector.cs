@@ -18,6 +18,7 @@ public class FieldPositionSelector : MonoBehaviour
     public Material material2;
     GameObject selectedField;
     bool selectedAtLeastOnce;
+    [SerializeField] GameObject trash;
     public Vector3 GetSelectedFieldPosition()
     {
         if (Touchscreen.current.primaryTouch.press.IsPressed())
@@ -106,7 +107,7 @@ public class FieldPositionSelector : MonoBehaviour
                                     CardContainer.Instance.lastDraggedObject = null;
                                     isStopped = true; // Što ovo radi ?
                                 }
-
+                                trash.SetActive(false);
 
                             }
                             Destroy(lastLamaDragged);

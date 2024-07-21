@@ -22,6 +22,7 @@ public class CardLamaScript : MonoBehaviour
 {
     public CardLamaData data;
     public TMP_Text lvlText;
+    public TMP_Text costText;
 
 
     // Start is called before the first frame update
@@ -41,5 +42,6 @@ public class CardLamaScript : MonoBehaviour
         //Debug.Log(level);
         data.level = level;
         lvlText.text = level.ToString();
+        costText.text = (level*ShopController.Instance.baseCardCost).ToString();
     }
 }

@@ -4616,6 +4616,7 @@ MonoBehaviour:
     type: 3}
   material1: {fileID: 2100000, guid: 8e0abd20bb4e9ee4b83fae5aa4344d1d, type: 2}
   material2: {fileID: 2100000, guid: a1646e9ea2cc43e4c9ea2fe6a3923c16, type: 2}
+  trash: {fileID: 1925496348}
 --- !u!4 &980207643
 Transform:
   m_ObjectHideFlags: 0

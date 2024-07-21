@@ -25,6 +25,7 @@ public class EnemyHit : MonoBehaviour
     public void DamageEnemyEffects()
     {
         enemyRenderer.materials = hitMaterials;
+
         Invoke("ResetColor", 0.1f);
     }
   

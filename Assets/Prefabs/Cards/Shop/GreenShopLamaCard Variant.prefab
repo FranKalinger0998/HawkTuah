@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1184825670324484750, guid: c89da8c0cff719b4a925b9dc3d2a291d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1480415206382572738, guid: c89da8c0cff719b4a925b9dc3d2a291d,
         type: 3}
       propertyPath: m_Name
@@ -122,6 +127,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7423901407700879980, guid: c89da8c0cff719b4a925b9dc3d2a291d, type: 3}
     - {fileID: 2926058853934948255, guid: c89da8c0cff719b4a925b9dc3d2a291d, type: 3}
+    - {fileID: 4917641953472122390, guid: c89da8c0cff719b4a925b9dc3d2a291d, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2955676475662131855, guid: c89da8c0cff719b4a925b9dc3d2a291d,
         type: 3}
@@ -144,6 +150,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 3251796950513204176}
     m_Modifications:
     - target: {fileID: 480390122177322364, guid: 3238d0afecb787d43a2d7cb321f6f734,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 567751472509377044, guid: 3238d0afecb787d43a2d7cb321f6f734,
         type: 3}
       propertyPath: m_fontSize
       value: 18

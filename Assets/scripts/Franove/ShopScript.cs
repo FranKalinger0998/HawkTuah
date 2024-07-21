@@ -9,7 +9,7 @@ public class ShopController : MonoBehaviour
     [SerializeField] RectTransform shop;
     [SerializeField] RectTransform shopSection;
     [SerializeField] RectTransform hand;
-    [SerializeField] int baseCardCost = 10;
+    public int baseCardCost = 10;
     [SerializeField] int baseRefillCost = 30;
     [SerializeField] int baseShopUpgradeCost = 300;
     [SerializeField] GameObject[] shopPrefab;

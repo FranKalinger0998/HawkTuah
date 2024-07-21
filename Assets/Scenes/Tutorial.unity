@@ -1041,6 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyText: {fileID: 852428712}
+  HealthImage: {fileID: 0}
 --- !u!4 &340531428
 Transform:
   m_ObjectHideFlags: 0
@@ -6541,6 +6542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lamaSpit: {fileID: 1372808088}
+  uff: {fileID: 0}
 --- !u!4 &1372808090
 Transform:
   m_ObjectHideFlags: 0
@@ -6599,6 +6601,8 @@ MonoBehaviour:
   - {fileID: 5420317374062596379, guid: f5ad54f81655e05469817326a68df0d8, type: 3}
   - {fileID: 1202291535859502493, guid: ad552538a400c234e89ee1968d0e89f6, type: 3}
   - {fileID: 7463737900310514779, guid: 447b6e33a8afd9342b3280918611c10e, type: 3}
+  refillCostText: {fileID: 0}
+  upgradeCostText: {fileID: 0}
   shopLevel: 1
 --- !u!114 &1379149798
 MonoBehaviour:
@@ -8524,7 +8528,7 @@ MonoBehaviour:
   button: {fileID: 442863980}
   instructionText: {fileID: 413919206}
   instructionTexts:
-  - Drag llamas from your hand into of the five lanes (press to continue)
+  - Drag llamas from your hand into one of the five lanes (press to continue)
   - There are 4 llamas in the game (press to continue)
   - The red one in your hand deals big damage to a single enemy (press to continue)
   - The blue one deals little damage to every enemy in the lane and slows them down

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] GameObject[] crawliesAndRunners;
     [SerializeField] GameObject crawlerOnly;
     [SerializeField] Transform[] enemySpawnPoints;
+    [SerializeField] TMP_Text waveIndexText;
+    [SerializeField] TMP_Text notificationText;
     public GameEvent onWaveEnd;
 
     int waveNumber = 0;
@@ -48,11 +51,16 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             timer++;
-            if (timer == 45)
+            if (timer == 35)
+            {
+                notificationText.text = "";
+            }
+
+            else if (timer == 45)
             {
                 isTimeToSpawn = false;
+                notificationText.text = "Wave over";
                 Resetllamas();
-                Debug.Log("Buy phase");
                 timer = 0;
                 StartCoroutine(StartOfWaveTimer());
                 break;
@@ -67,11 +75,16 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             timer++;
-            //Debug.Log(timer);
-            if (timer == 30)
+            if(timer== 5)
             {
-                Debug.Log("Start wave");
+                notificationText.text = "";
+            }
+            //Debug.Log(timer);
+            else if (timer == 30)
+            {
                 waveNumber++;
+                notificationText.text = $"Wave {waveNumber} start!";
+                UpdateWaveDisplay();
                 isTimeToSpawn = true;
                 StartCoroutine(EnemySpawner());
                 StartCoroutine(EndOfWaveTimer());
@@ -88,5 +101,9 @@ public class SpawnManager : MonoBehaviour
     {
         onWaveEnd.Raise(this, llamasAsleep);
         Debug.Log("I was called");
+    }
+    public void UpdateWaveDisplay()
+    {
+        waveIndexText.text="Wave: "+waveNumber.ToString();
     }
 }

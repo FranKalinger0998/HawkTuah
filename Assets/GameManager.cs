@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     }
     void UpdateUI()
     {
-        MoneyText.text=money.ToString();
+        MoneyText.text="Gold: " + money.ToString();
     }
     public IEnumerator PeriodicIncrement()
     {

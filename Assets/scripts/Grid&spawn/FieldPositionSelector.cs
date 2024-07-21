@@ -42,9 +42,8 @@ public class FieldPositionSelector : MonoBehaviour
                     selectedField = hit.collider.gameObject;
                     selectedAtLeastOnce = true;
                     selectedField.GetComponent<MeshRenderer>().enabled = true;
-                    if (selectedField.transform.childCount == 1)
+                    if (selectedField.transform.childCount == 0)
                     {
-
                         selectedField.GetComponent<MeshRenderer>().material = material2;
                     }
                 }

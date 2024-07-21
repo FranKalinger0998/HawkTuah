@@ -11,7 +11,7 @@ public class LlamaScript : MonoBehaviour
     
     public LamaType lamaType;
     public int level=1;
-    bool isdead;
+    public bool isdead;
     public int damage;
     private void Start()
     {
@@ -24,9 +24,8 @@ public class LlamaScript : MonoBehaviour
     }
 
     public void Kill()
-    {
-        isdead = true;
-        Debug.Log("I am die");
+    {      
+        StartCoroutine(GetTurnedOver());
     }
 
     public void RespawnLama(Component sender,object data)
@@ -37,9 +36,17 @@ public class LlamaScript : MonoBehaviour
             if (value == 0)
             {
                 Debug.Log("Radi");
+                if (isdead)
+                {
+                    transform.Rotate(0, 0, 180);
+                }
                 isdead = false;
                 StopAllCoroutines();
-                StartCoroutine(SpitFire());
+                if(lamaType!=LamaType.Gold)
+                {
+                    StartCoroutine(SpitFire());
+                }
+                
             }
         }    
     }
@@ -55,6 +62,21 @@ public class LlamaScript : MonoBehaviour
                 yield return new WaitForSeconds(4f * (1 / llamaData.baseFireSpeed));          
         }
         
+    }
+    IEnumerator GetTurnedOver()
+    {
+        int i= 0;
+        while (true) 
+        {
+            yield return new WaitForSeconds(1);
+            i++;
+            if(i==5)
+            {
+                isdead = true;
+                transform.Rotate(0, 0, 180);
+                break;
+            }
+        }
     }
 
 }

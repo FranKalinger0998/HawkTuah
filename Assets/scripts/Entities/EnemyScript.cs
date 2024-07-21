@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
     float slowDownMod=0.8f;
     int poisonTick = 0;
     EnemyHit enemyHitSimulator;
+    bool reachedLama;
 
     private void Start()
     {
@@ -18,14 +19,23 @@ public class EnemyScript : MonoBehaviour
     }
     private void Update()
     {
-        transform.position += Vector3.left * enemyData.speedModifier * slowDownMod * Time.deltaTime;
+        if (!reachedLama)
+        {
+            transform.position += Vector3.left * enemyData.speedModifier * slowDownMod * Time.deltaTime;
+        } 
         KillIfDead();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Llama"))
         {
-            other.gameObject.GetComponent<LlamaScript>().Kill();
+            if(!other.gameObject.GetComponent<LlamaScript>().isdead) 
+            {
+                reachedLama = true;
+                other.gameObject.GetComponent<LlamaScript>().Kill();
+                StartCoroutine(WaitForFiveSeconds());
+            }
+            
         }
         else if(other.gameObject.CompareTag("Spittle"))
         {
@@ -69,5 +79,19 @@ public class EnemyScript : MonoBehaviour
             //Debug.Log(currentHealth);
         }  
 
+    }
+    IEnumerator WaitForFiveSeconds()
+    {
+        int i = 0;
+        while(true)
+        {
+            yield return new WaitForSeconds(1);
+            i++;
+            if (i == 5)
+            {
+                reachedLama=false;
+            }
+        }
+        
     }
 }

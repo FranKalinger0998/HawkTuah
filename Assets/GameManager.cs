@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         HealthImage.fillAmount = (float)Lifes/(float)MaxLifes ;
         if ( Lifes <= 0 ) 
         {
-            SceneManager.LoadScene("EndScrene");
+            SceneManager.LoadScene("EndScene");
         }
     }
     public void AddMoney(int amount)

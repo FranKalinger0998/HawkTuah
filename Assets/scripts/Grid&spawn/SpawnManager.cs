@@ -13,6 +13,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] TMP_Text waveIndexText;
     [SerializeField] TMP_Text notificationText;
     public GameEvent onWaveEnd;
+    int levelToSpawn = 1;
 
     int waveNumber = 0;
     int timer = 0;
@@ -30,15 +31,15 @@ public class SpawnManager : MonoBehaviour
         {
             if (waveNumber <= 2)
             {
-                Instantiate(crawlerOnly, enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, crawlerOnly.transform.rotation);
+                Instantiate(crawlerOnly, enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, crawlerOnly.transform.rotation).GetComponent<EnemyScript>().SetLevel(1);
             }
             else if (waveNumber <= 5)
             {
-                Instantiate(crawliesAndRunners[Random.Range(0, crawliesAndRunners.Length)], enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, crawliesAndRunners[Random.Range(0, crawliesAndRunners.Length)].transform.rotation);
+                Instantiate(crawliesAndRunners[Random.Range(0, crawliesAndRunners.Length)], enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, crawliesAndRunners[Random.Range(0, crawliesAndRunners.Length)].transform.rotation).GetComponent<EnemyScript>().SetLevel(1);
             }
             else if (waveNumber > 5)
             {
-                Instantiate(allEnemies[Random.Range(0, allEnemies.Length)], enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, allEnemies[Random.Range(0, allEnemies.Length)].transform.rotation);
+                Instantiate(allEnemies[Random.Range(0, allEnemies.Length)], enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, allEnemies[Random.Range(0, allEnemies.Length)].transform.rotation).GetComponent<EnemyScript>().SetLevel(1);
             }
 
             yield return new WaitForSeconds(spawnDelay);
@@ -83,6 +84,7 @@ public class SpawnManager : MonoBehaviour
             else if (timer == 30)
             {
                 waveNumber++;
+                levelToSpawn=Mathf.FloorToInt(waveNumber/2f);
                 notificationText.text = $"Wave {waveNumber} start!";
                 UpdateWaveDisplay();
                 isTimeToSpawn = true;

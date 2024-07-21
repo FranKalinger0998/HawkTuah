@@ -15,7 +15,12 @@ public class EnemyScript : MonoBehaviour
     private void Start()
     {
         enemyHitSimulator=GetComponent<EnemyHit>();
-        currentHealth =enemyData.health*level;
+        SetLevel(level);
+    }
+    public void SetLevel(int level)
+    {
+        this.level = level;
+        currentHealth = enemyData.health * this.level;
     }
     private void Update()
     {

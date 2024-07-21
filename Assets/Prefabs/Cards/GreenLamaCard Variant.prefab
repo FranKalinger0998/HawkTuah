@@ -41,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 512478924987710512, guid: 97036622824bddc44b365768a681261a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 352.3639
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 512478924987710512, guid: 97036622824bddc44b365768a681261a,
         type: 3}
@@ -122,7 +122,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 813159222, guid: 08497ed15d739fa4cae7c19429ed2e5f,
+      objectReference: {fileID: 1866919867, guid: 567d89e3a8d5aee499c6d8789932d71f,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

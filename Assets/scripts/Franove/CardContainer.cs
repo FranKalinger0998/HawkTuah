@@ -45,6 +45,8 @@ public class CardContainer : MonoBehaviour {
     private CardWrapper currentDraggedCard;
     public static CardContainer Instance;
     public GameObject lastDraggedObject;
+
+    [SerializeField] GameObject trash;
     
 
     private void Awake()
@@ -223,6 +225,7 @@ public class CardContainer : MonoBehaviour {
         Color currentColor = cardImage.color;
         currentColor.a = 0.3f;
         cardImage.color = currentColor;
+        trash.SetActive(true);
 
     }
 
@@ -242,6 +245,7 @@ public class CardContainer : MonoBehaviour {
         cardImage.color = currentColor;
 
         currentDraggedCard = null;
+        trash.SetActive(false);
     }
     
     public void DestroyCard(CardWrapper card) {

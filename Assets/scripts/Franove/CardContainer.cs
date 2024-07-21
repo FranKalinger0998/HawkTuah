@@ -219,6 +219,11 @@ public class CardContainer : MonoBehaviour {
         currentDraggedCard = card;
         lastDraggedObject=card.gameObject;
         Debug.Log(lastDraggedObject.name);
+        Image cardImage = lastDraggedObject.GetComponent<Image>();
+        Color currentColor = cardImage.color;
+        currentColor.a = 0.3f;
+        cardImage.color = currentColor;
+
     }
 
     public void OnCardDragEnd() {
@@ -229,6 +234,13 @@ public class CardContainer : MonoBehaviour {
                 DestroyCard(currentDraggedCard);
             }
         }
+        
+        
+        Image cardImage = currentDraggedCard.gameObject.GetComponent<Image>();
+        Color currentColor = cardImage.color;
+        currentColor.a = 1f;
+        cardImage.color = currentColor;
+
         currentDraggedCard = null;
     }
     

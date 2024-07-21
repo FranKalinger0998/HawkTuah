@@ -6,6 +6,7 @@ public class AudioManagerScript : MonoBehaviour
 {
     public static AudioManagerScript Instance;
     public AudioSource lamaSpit;
+    public AudioSource uff;
 
     private void Awake()
     {
@@ -15,5 +16,9 @@ public class AudioManagerScript : MonoBehaviour
     public void PlayLamaSpit()
     {
         lamaSpit.Play();
+    }
+    public void PlayUffSound()
+    {
+        uff.Play();
     }
 }

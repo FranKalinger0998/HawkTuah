@@ -70,6 +70,7 @@ public class EnemyScript : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
+            AudioManagerScript.Instance.PlayUffSound();
             Destroy(gameObject);
         }
     }

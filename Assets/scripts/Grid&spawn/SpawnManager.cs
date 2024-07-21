@@ -31,15 +31,15 @@ public class SpawnManager : MonoBehaviour
         {
             if (waveNumber <= 2)
             {
-                Instantiate(crawlerOnly, enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, crawlerOnly.transform.rotation).GetComponent<EnemyScript>().SetLevel(1);
+                Instantiate(crawlerOnly, enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, crawlerOnly.transform.rotation).GetComponent<EnemyScript>().SetLevel(levelToSpawn);
             }
             else if (waveNumber <= 5)
             {
-                Instantiate(crawliesAndRunners[Random.Range(0, crawliesAndRunners.Length)], enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, crawliesAndRunners[Random.Range(0, crawliesAndRunners.Length)].transform.rotation).GetComponent<EnemyScript>().SetLevel(1);
+                Instantiate(crawliesAndRunners[Random.Range(0, crawliesAndRunners.Length)], enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, crawliesAndRunners[Random.Range(0, crawliesAndRunners.Length)].transform.rotation).GetComponent<EnemyScript>().SetLevel(levelToSpawn);
             }
             else if (waveNumber > 5)
             {
-                Instantiate(allEnemies[Random.Range(0, allEnemies.Length)], enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, allEnemies[Random.Range(0, allEnemies.Length)].transform.rotation).GetComponent<EnemyScript>().SetLevel(1);
+                Instantiate(allEnemies[Random.Range(0, allEnemies.Length)], enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)].position, allEnemies[Random.Range(0, allEnemies.Length)].transform.rotation).GetComponent<EnemyScript>().SetLevel(levelToSpawn);
             }
 
             yield return new WaitForSeconds(spawnDelay);

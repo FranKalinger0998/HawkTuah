@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     bool isGameRunning;
     int Lifes;
     int MaxLifes=5;
+    
 
 
     public TMP_Text MoneyText;
@@ -74,5 +75,12 @@ public class GameManager : MonoBehaviour
             UpdateUI();
         }
     }
-
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
 }

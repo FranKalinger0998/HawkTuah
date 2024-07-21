@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ public class ShopController : MonoBehaviour
     [SerializeField] int baseRefillCost = 30;
     [SerializeField] int baseShopUpgradeCost = 300;
     [SerializeField] GameObject[] shopPrefab;
+    [SerializeField] TMP_Text refillCostText;
+    [SerializeField] TMP_Text upgradeCostText;
     public int shopLevel = 1;
     public void Awake()
     {
@@ -22,6 +25,7 @@ public class ShopController : MonoBehaviour
     {
         RefillShop();
         OnClickShop();
+        UpdateCosts();
     }
     public void OnClickShop()
     {
@@ -55,9 +59,17 @@ public class ShopController : MonoBehaviour
         {
             shopLevel++;
             RefillShop();
+            UpdateCosts();
         }
-        
+
     }
+
+    private void UpdateCosts()
+    {
+        upgradeCostText.text = (shopLevel * baseShopUpgradeCost).ToString();
+        refillCostText.text = (shopLevel * baseRefillCost).ToString();
+    }
+
     public void BuyRefillShop()
     {
         if (GameManager.Instance.TrySpendMoney(baseRefillCost * shopLevel))

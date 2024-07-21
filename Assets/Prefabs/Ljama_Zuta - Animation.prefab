@@ -241,8 +241,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5764295, y: 2.4313328, z: 1}
-  m_Center: {x: -0.023912227, y: 1.9536532, z: -5.705111e-18}
+  m_Size: {x: 0.46612567, y: 2.4313328, z: 1}
+  m_Center: {x: -0.087620296, y: 1.9536532, z: -1.1409523e-16}
 --- !u!114 &6894339431368387405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +258,7 @@ MonoBehaviour:
   llamaData: {fileID: 11400000, guid: 21c93150c89ab9a41975f0d6124f565b, type: 2}
   phlegmPrefab: {fileID: 5236270076707377997, guid: a47c6c0d369db474ab2eec86ad499691,
     type: 3}
+  animator: {fileID: 0}
   lamaType: 0
   level: 1
   isdead: 0

@@ -17,6 +17,7 @@ public class FieldPositionSelector : MonoBehaviour
     public Material material1;
     public Material material2;
     GameObject selectedField;
+    bool selectedAtLeastOnce;
     public Vector3 GetSelectedFieldPosition()
     {
         if (Touchscreen.current.primaryTouch.press.IsPressed())
@@ -39,6 +40,7 @@ public class FieldPositionSelector : MonoBehaviour
                         selectedField.GetComponent<MeshRenderer>().enabled = false;
                     }
                     selectedField = hit.collider.gameObject;
+                    selectedAtLeastOnce = true;
                     selectedField.GetComponent<MeshRenderer>().enabled = true;
                     if (selectedField.transform.childCount == 1)
                     {
@@ -54,7 +56,11 @@ public class FieldPositionSelector : MonoBehaviour
         }
         else
         {
-
+            if (selectedAtLeastOnce)
+            {
+                selectedField.GetComponent<MeshRenderer>().enabled = false;
+            }
+            
             if (selectedField != null && !isStopped)
             {
                 if (selectedField.transform.childCount == 0)
@@ -68,7 +74,7 @@ public class FieldPositionSelector : MonoBehaviour
                         {
                             if (LamaCard.data.lamaType==LamaType.Gold)
                             {
-                                GameObject goldLama=Instantiate(GoldPrefab, selectedField.transform.position + new Vector3(0.4f, 0.5f, -0.6f), GoldPrefab.transform.rotation, selectedField.transform);
+                                GameObject goldLama=Instantiate(GoldPrefab, selectedField.transform.position + new Vector3(0.4f, 0.1f, 0), GoldPrefab.transform.rotation, selectedField.transform);
                                 goldLama.GetComponent<LlamaScript>().level = LamaCard.data.level;
                                 
                                 CardContainer.Instance.lastDraggedObject = null;
@@ -76,7 +82,7 @@ public class FieldPositionSelector : MonoBehaviour
                             }
                             else if (LamaCard.data.lamaType==LamaType.Blue)
                             {
-                                GameObject blueLama = Instantiate(BluePrefab, selectedField.transform.position + new Vector3(0.4f, 0.5f, -0.6f), BluePrefab.transform.rotation, selectedField.transform);
+                                GameObject blueLama = Instantiate(BluePrefab, selectedField.transform.position + new Vector3(0.4f, 0.1f, 0), BluePrefab.transform.rotation, selectedField.transform);
                                 //Set Lama Level equal to LamaCard.data.level;
                                 blueLama.GetComponent<LlamaScript>().level = LamaCard.data.level;
                                 CardContainer.Instance.lastDraggedObject = null;
@@ -84,7 +90,7 @@ public class FieldPositionSelector : MonoBehaviour
                             }
                             else if (LamaCard.data.lamaType==LamaType.Green)
                             {
-                                GameObject greenLama = Instantiate(GreenPrefab, selectedField.transform.position + new Vector3(0.4f, 0.5f, -0.6f), GreenPrefab.transform.rotation, selectedField.transform);
+                                GameObject greenLama = Instantiate(GreenPrefab, selectedField.transform.position + new Vector3(0.4f, 0.1f, 0), GreenPrefab.transform.rotation, selectedField.transform);
                                 //Set Lama Level equal to LamaCard.data.level;
                                 greenLama.GetComponent<LlamaScript>().level = LamaCard.data.level;
                                 CardContainer.Instance.lastDraggedObject = null;
@@ -93,7 +99,7 @@ public class FieldPositionSelector : MonoBehaviour
                             else if (LamaCard.data.lamaType==LamaType.Red)
                             {
                                 //Debug.Log("in red");
-                                GameObject redLama = Instantiate(RedPrefab, selectedField.transform.position + new Vector3(0.4f, 0.5f, -0.6f), RedPrefab.transform.rotation, selectedField.transform);
+                                GameObject redLama = Instantiate(RedPrefab, selectedField.transform.position + new Vector3(0.4f, 0.1f, 0), RedPrefab.transform.rotation, selectedField.transform);
                                 //Set Lama Level equal to LamaCard.data.level;
                                 redLama.GetComponent<LlamaScript>().level = LamaCard.data.level;
                                 CardContainer.Instance.lastDraggedObject = null;

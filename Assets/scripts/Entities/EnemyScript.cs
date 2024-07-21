@@ -8,6 +8,7 @@ public class EnemyScript : MonoBehaviour
     public int level;
     float currentHealth;
     float slowDownMod=0.8f;
+    int poisonTick = 0;
 
     private void Start()
     {
@@ -54,11 +55,12 @@ public class EnemyScript : MonoBehaviour
     }
     IEnumerator DoT(int damage)
     {
-        while(currentHealth > 0)
+        while(currentHealth > 0 && poisonTick<3)
         {
             yield return new WaitForSeconds(1);
             currentHealth -= damage;
-            Debug.Log(currentHealth);
+            poisonTick++;
+            //Debug.Log(currentHealth);
         }  
 
     }

@@ -254,6 +254,7 @@ MonoBehaviour:
   llamaData: {fileID: 11400000, guid: 39a022215184d4f47b8094bd6adf9e3b, type: 2}
   phlegmPrefab: {fileID: 5236270076707377997, guid: a47c6c0d369db474ab2eec86ad499691,
     type: 3}
+  animator: {fileID: 9133664289794303084}
   lamaType: 2
   level: 1
   isdead: 0

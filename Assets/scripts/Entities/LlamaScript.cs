@@ -8,6 +8,7 @@ public class LlamaScript : MonoBehaviour
 {
     [SerializeField] LlamaData llamaData;
     [SerializeField] GameObject phlegmPrefab;
+    [SerializeField] Animator animator;
     
     public LamaType lamaType;
     public int level=1;
@@ -54,12 +55,15 @@ public class LlamaScript : MonoBehaviour
     {
         while (!isdead) 
         {          
+            
+            //Debug.Log(phlegmPrefab.GetComponent<SpitScript>().spitSender.name);
+            AudioManagerScript.Instance.PlayLamaSpit();
+            animator.SetTrigger("Spit");
+            yield return new WaitForSeconds(0.6f);
             GameObject temp = Instantiate(phlegmPrefab, gameObject.transform.GetChild(0).transform.position, phlegmPrefab.transform.rotation);
             //phlegmPrefab.GetComponent<SpitScript>().spitSender=gameObject;
             temp.GetComponent<SpitScript>().spitSender = gameObject;
-            //Debug.Log(phlegmPrefab.GetComponent<SpitScript>().spitSender.name);
-            
-                yield return new WaitForSeconds(4f * (1 / llamaData.baseFireSpeed));          
+            yield return new WaitForSeconds(4f * (1 / llamaData.baseFireSpeed));          
         }
         
     }

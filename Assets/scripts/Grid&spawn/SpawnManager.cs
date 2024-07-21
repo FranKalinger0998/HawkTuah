@@ -84,7 +84,7 @@ public class SpawnManager : MonoBehaviour
             else if (timer == 30)
             {
                 waveNumber++;
-                levelToSpawn=Mathf.FloorToInt(waveNumber/2f);
+                levelToSpawn=Mathf.CeilToInt(waveNumber/2f);
                 notificationText.text = $"Wave {waveNumber} start!";
                 UpdateWaveDisplay();
                 isTimeToSpawn = true;

@@ -26,7 +26,7 @@ public class CardLamaScript : MonoBehaviour
 
 
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         SetLevel(data.level);
     }
@@ -42,6 +42,7 @@ public class CardLamaScript : MonoBehaviour
         //Debug.Log(level);
         data.level = level;
         lvlText.text = level.ToString();
+
         costText.text = (level*ShopController.Instance.baseCardCost).ToString();
     }
 }

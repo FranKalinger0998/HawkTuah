@@ -9,6 +9,7 @@ TagManager:
   - Spittle
   - Llama
   - Treshold
+  - Enemy
   layers:
   - Default
   - TransparentFX

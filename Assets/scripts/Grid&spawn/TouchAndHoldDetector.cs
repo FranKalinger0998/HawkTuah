@@ -4,7 +4,7 @@ public class TouchAndHoldDetector
 {
     private float touchDuration = 0.0f;
     private bool touchHeld = false;
-    private const float holdThreshold = 2.0f; // 2 seconds
+    private const float holdThreshold = 1.0f; // 1 seconds
     private Vector2 touchStartPosition;
 
     public delegate void TouchAndHoldAction(Vector2 position);

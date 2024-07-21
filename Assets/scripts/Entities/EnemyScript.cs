@@ -9,10 +9,12 @@ public class EnemyScript : MonoBehaviour
     float currentHealth;
     float slowDownMod=0.8f;
     int poisonTick = 0;
+    EnemyHit enemyHitSimulator;
 
     private void Start()
     {
-        currentHealth=enemyData.health*level;
+        enemyHitSimulator=GetComponent<EnemyHit>();
+        currentHealth =enemyData.health*level;
     }
     private void Update()
     {
@@ -32,6 +34,7 @@ public class EnemyScript : MonoBehaviour
             if(reference.lamaType==LamaType.Red)
             {
                 currentHealth -= damage;
+                enemyHitSimulator.DamageEnemyEffects();
                 Destroy(other.gameObject);
             }
             else if (reference.lamaType == LamaType.Green)
@@ -40,8 +43,10 @@ public class EnemyScript : MonoBehaviour
                 Destroy(other.gameObject);
                 
             }
-            else
+            else if (reference.lamaType == LamaType.Blue)
             {
+                currentHealth -= damage;
+                enemyHitSimulator.DamageEnemyEffects();
                 slowDownMod = 0.4f;
             }
         }
@@ -59,6 +64,7 @@ public class EnemyScript : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             currentHealth -= damage;
+            enemyHitSimulator.DamageEnemyEffects();
             poisonTick++;
             //Debug.Log(currentHealth);
         }  

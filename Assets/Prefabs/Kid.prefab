@@ -79,6 +79,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8939189037495915352}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 300621bfccd13104ab9ff89213460ccd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8606923917084513309}
   m_SourcePrefab: {fileID: 100100000, guid: 300621bfccd13104ab9ff89213460ccd, type: 3}
 --- !u!1 &3251978417382627972 stripped
 GameObject:
@@ -142,3 +146,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.82842207, y: 2.4668424, z: 1}
   m_Center: {x: -0.029420614, y: 1.0099574, z: 0}
+--- !u!114 &-8606923917084513309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3251978417382627972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb41609d18d2ddb47877e9abce9086a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterials: []
+  enemyRenderer: {fileID: 5775109557252497920}
+  hitMaterial: {fileID: 2100000, guid: 61df4b7f9009104419dd48d99d678c73, type: 2}
+--- !u!137 &5775109557252497920 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8198098878384735701, guid: 300621bfccd13104ab9ff89213460ccd,
+    type: 3}
+  m_PrefabInstance: {fileID: 2441004830976190421}
+  m_PrefabAsset: {fileID: 0}
